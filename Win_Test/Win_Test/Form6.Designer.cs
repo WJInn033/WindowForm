@@ -15,6 +15,7 @@ namespace Win_Test
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -230,29 +231,77 @@ namespace Win_Test
             // 
             // toolbar buttons
             // 
+            this.newButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.newButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newButton.Text = "새로";
+            this.newButton.ToolTipText = "새로 만들기";
             this.newButton.Click += new System.EventHandler(this.newMenuItem_Click);
+            this.openButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.openButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openButton.Text = "열기";
+            this.openButton.ToolTipText = "열기";
             this.openButton.Click += new System.EventHandler(this.openMenuItem_Click);
+            this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveButton.Text = "저장";
+            this.saveButton.ToolTipText = "저장";
             this.saveButton.Click += new System.EventHandler(this.saveMenuItem_Click);
+            this.printButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.printButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.printButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printButton.Text = "출력";
+            this.printButton.ToolTipText = "출력";
             this.printButton.Click += new System.EventHandler(this.printMenuItem_Click);
+            this.undoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.undoButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.undoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.undoButton.Text = "취소";
+            this.undoButton.ToolTipText = "지우기 취소";
             this.undoButton.Click += new System.EventHandler(this.undoMenuItem_Click);
+            this.copyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copyButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.copyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyButton.Text = "복사";
+            this.copyButton.ToolTipText = "복사";
             this.copyButton.Click += new System.EventHandler(this.copyMenuItem_Click);
+            this.pasteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pasteButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.pasteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteButton.Text = "붙여넣기";
+            this.pasteButton.ToolTipText = "붙여넣기";
             this.pasteButton.Click += new System.EventHandler(this.pasteMenuItem_Click);
+            this.penButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.penButton.Image = CreateToolbarIcon("pen");
+            this.penButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.penButton.Text = "펜";
+            this.penButton.ToolTipText = "펜";
             this.penButton.Click += new System.EventHandler(this.penButton_Click);
+            this.eraserButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.eraserButton.Image = CreateToolbarIcon("eraser");
+            this.eraserButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.eraserButton.Text = "지우개";
+            this.eraserButton.ToolTipText = "지우개";
             this.eraserButton.Click += new System.EventHandler(this.eraserButton_Click);
+            this.lineButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.lineButton.Image = CreateToolbarIcon("line");
+            this.lineButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lineButton.Text = "선";
+            this.lineButton.ToolTipText = "선";
             this.lineButton.Click += new System.EventHandler(this.lineButton_Click);
+            this.rectangleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.rectangleButton.Image = CreateToolbarIcon("rectangle");
+            this.rectangleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.rectangleButton.Text = "사각형";
+            this.rectangleButton.ToolTipText = "사각형";
             this.rectangleButton.Click += new System.EventHandler(this.rectangleButton_Click);
+            this.ellipseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ellipseButton.Image = CreateToolbarIcon("ellipse");
+            this.ellipseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ellipseButton.Text = "타원";
+            this.ellipseButton.ToolTipText = "타원";
             this.ellipseButton.Click += new System.EventHandler(this.ellipseButton_Click);
             // 
             // statusStrip1
@@ -300,6 +349,44 @@ namespace Win_Test
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+        }
+
+        private static System.Drawing.Bitmap CreateToolbarIcon(string shape)
+        {
+            System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(16, 16);
+            using (System.Drawing.Graphics graphics = System.Drawing.Graphics.FromImage(bitmap))
+            using (System.Drawing.Pen pen = new System.Drawing.Pen(System.Drawing.Color.RoyalBlue, 2))
+            using (System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(System.Drawing.Color.LightSkyBlue))
+            {
+                graphics.Clear(System.Drawing.Color.Magenta);
+                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                if (shape == "pen")
+                {
+                    graphics.DrawLine(pen, 3, 13, 13, 3);
+                    graphics.FillEllipse(System.Drawing.Brushes.Black, 2, 12, 3, 3);
+                }
+                else if (shape == "eraser")
+                {
+                    graphics.FillRectangle(brush, 3, 8, 10, 5);
+                    graphics.DrawRectangle(pen, 3, 8, 10, 5);
+                    graphics.DrawLine(pen, 5, 8, 9, 4);
+                    graphics.DrawLine(pen, 13, 8, 9, 4);
+                }
+                else if (shape == "line")
+                {
+                    graphics.DrawLine(pen, 3, 13, 13, 3);
+                }
+                else if (shape == "rectangle")
+                {
+                    graphics.DrawRectangle(pen, 3, 4, 10, 8);
+                }
+                else
+                {
+                    graphics.DrawEllipse(pen, 3, 4, 10, 8);
+                }
+            }
+            return bitmap;
         }
 
         private System.Windows.Forms.MenuStrip menuStrip1;
