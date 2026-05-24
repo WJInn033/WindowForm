@@ -28,12 +28,19 @@ namespace Win_Test
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            UpdateDateTime();
+            clockTimer.Start();
             CreateNewDocument();
         }
 
         private void Form6_MdiChildActivate(object sender, EventArgs e)
         {
-            UpdateStatus();
+            UpdateDateTime();
+        }
+
+        private void clockTimer_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTime();
         }
 
         private void newMenuItem_Click(object sender, EventArgs e)
@@ -57,7 +64,7 @@ namespace Win_Test
                     doc.Canvas.LoadImage(source);
                     doc.Text = Path.GetFileName(openFileDialog1.FileName);
                 }
-                statusLabel.Text = "이미지를 열었습니다.";
+                SetActionStatus("열었습니다.");
             }
             catch (Exception ex)
             {
@@ -164,7 +171,7 @@ namespace Win_Test
             if (ActiveCanvas != null)
             {
                 Clipboard.SetImage(ActiveCanvas.CreateSnapshot());
-                statusLabel.Text = "그림을 복사했습니다.";
+                SetActionStatus("복사했습니다.");
             }
         }
 
@@ -173,7 +180,7 @@ namespace Win_Test
             if (ActiveCanvas != null && Clipboard.ContainsImage())
             {
                 ActiveCanvas.PasteImage(Clipboard.GetImage());
-                statusLabel.Text = "그림을 붙여넣었습니다.";
+                SetActionStatus("붙여넣었습니다.");
             }
         }
 
@@ -188,7 +195,7 @@ namespace Win_Test
             if (colorDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 ActiveCanvas.PenColor = colorDialog1.Color;
-                statusLabel.Text = "펜 색을 변경했습니다.";
+                SetActionStatus("펜 색을 변경했습니다.");
             }
         }
 
@@ -203,7 +210,7 @@ namespace Win_Test
             if (colorDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 ActiveCanvas.SetCanvasColor(colorDialog1.Color);
-                statusLabel.Text = "배경색을 변경했습니다.";
+                SetActionStatus("배경색을 변경했습니다.");
             }
         }
 
@@ -215,7 +222,7 @@ namespace Win_Test
             }
 
             ActiveCanvas.PenWidth = ActiveCanvas.PenWidth >= 12 ? 2 : ActiveCanvas.PenWidth + 2;
-            statusLabel.Text = "선 굵기: " + ActiveCanvas.PenWidth;
+            SetActionStatus("선 굵기를 변경했습니다.");
         }
 
         private void clearMenuItem_Click(object sender, EventArgs e)
@@ -281,12 +288,13 @@ namespace Win_Test
             PaintDocument doc = new PaintDocument();
             doc.MdiParent = this;
             doc.Text = title ?? "문서" + documentNumber++;
-            doc.Canvas.CanvasChanged += delegate { UpdateStatus(); };
+            doc.Canvas.CanvasChanged += delegate { SetActionStatus("수정되었습니다."); };
             doc.Show();
             if (activate)
             {
                 doc.Activate();
             }
+            SetActionStatus("새로생성");
             return doc;
         }
 
@@ -316,7 +324,7 @@ namespace Win_Test
                     image.Save(doc.FileName, format);
                 }
                 doc.Text = Path.GetFileName(doc.FileName);
-                statusLabel.Text = "저장했습니다.";
+                SetActionStatus("저장되었습니다.");
             }
             catch (Exception ex)
             {
@@ -332,23 +340,19 @@ namespace Win_Test
             }
 
             ActiveCanvas.Tool = tool;
-            UpdateStatus();
+            SetActionStatus("도구를 변경했습니다.");
         }
 
-        private void UpdateStatus()
+        private void UpdateDateTime()
         {
-            PaintCanvas canvas = ActiveCanvas;
-            if (canvas == null)
-            {
-                statusLabel.Text = "문서 없음";
-                toolStatusLabel.Text = string.Empty;
-                sizeStatusLabel.Text = string.Empty;
-                return;
-            }
+            DateTime now = DateTime.Now;
+            dateStatusLabel.Text = now.ToString("yyyy-MM-dd");
+            timeStatusLabel.Text = now.ToString("HH:mm:ss");
+        }
 
-            statusLabel.Text = ActiveDocument.Text;
-            toolStatusLabel.Text = "도구: " + canvas.ToolText + " / 선 굵기: " + canvas.PenWidth;
-            sizeStatusLabel.Text = canvas.ImageSize.Width + " x " + canvas.ImageSize.Height;
+        private void SetActionStatus(string message)
+        {
+            actionStatusLabel.Text = message;
         }
 
         private static ImageFormat GetImageFormat(string fileName)

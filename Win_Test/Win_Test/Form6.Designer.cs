@@ -49,19 +49,18 @@ namespace Win_Test
             this.newButton = new System.Windows.Forms.ToolStripButton();
             this.openButton = new System.Windows.Forms.ToolStripButton();
             this.saveButton = new System.Windows.Forms.ToolStripButton();
+            this.saveAsButton = new System.Windows.Forms.ToolStripButton();
             this.printButton = new System.Windows.Forms.ToolStripButton();
+            this.printPreviewButton = new System.Windows.Forms.ToolStripButton();
+            this.cutButton = new System.Windows.Forms.ToolStripButton();
             this.undoButton = new System.Windows.Forms.ToolStripButton();
             this.copyButton = new System.Windows.Forms.ToolStripButton();
             this.pasteButton = new System.Windows.Forms.ToolStripButton();
-            this.penButton = new System.Windows.Forms.ToolStripButton();
-            this.eraserButton = new System.Windows.Forms.ToolStripButton();
-            this.lineButton = new System.Windows.Forms.ToolStripButton();
-            this.rectangleButton = new System.Windows.Forms.ToolStripButton();
-            this.ellipseButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.sizeStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dateStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timeStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.actionStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.clockTimer = new System.Windows.Forms.Timer();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
@@ -212,18 +211,17 @@ namespace Win_Test
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newButton,
             this.openButton,
-            this.saveButton,
-            this.printButton,
             new System.Windows.Forms.ToolStripSeparator(),
-            this.undoButton,
+            this.saveButton,
+            this.saveAsButton,
+            this.printButton,
+            this.printPreviewButton,
+            new System.Windows.Forms.ToolStripSeparator(),
             this.copyButton,
+            this.cutButton,
             this.pasteButton,
             new System.Windows.Forms.ToolStripSeparator(),
-            this.penButton,
-            this.eraserButton,
-            this.lineButton,
-            this.rectangleButton,
-            this.ellipseButton});
+            this.undoButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(920, 25);
@@ -249,75 +247,71 @@ namespace Win_Test
             this.saveButton.Text = "저장";
             this.saveButton.ToolTipText = "저장";
             this.saveButton.Click += new System.EventHandler(this.saveMenuItem_Click);
+            this.saveAsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveAsButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.saveAsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveAsButton.Text = "다른 이름으로 저장";
+            this.saveAsButton.ToolTipText = "다른 이름으로 저장";
+            this.saveAsButton.Click += new System.EventHandler(this.saveAsMenuItem_Click);
             this.printButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.printButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.printButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printButton.Text = "출력";
             this.printButton.ToolTipText = "출력";
             this.printButton.Click += new System.EventHandler(this.printMenuItem_Click);
-            this.undoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.undoButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.undoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.undoButton.Text = "취소";
-            this.undoButton.ToolTipText = "지우기 취소";
-            this.undoButton.Click += new System.EventHandler(this.undoMenuItem_Click);
+            this.printPreviewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.printPreviewButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.printPreviewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printPreviewButton.Text = "미리보기";
+            this.printPreviewButton.ToolTipText = "미리보기";
+            this.printPreviewButton.Click += new System.EventHandler(this.printPreviewMenuItem_Click);
             this.copyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.copyButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
             this.copyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyButton.Text = "복사";
             this.copyButton.ToolTipText = "복사";
             this.copyButton.Click += new System.EventHandler(this.copyMenuItem_Click);
+            this.cutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cutButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.cutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutButton.Text = "잘라내기";
+            this.cutButton.ToolTipText = "잘라내기";
+            this.cutButton.Click += new System.EventHandler(this.cutMenuItem_Click);
             this.pasteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pasteButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.pasteButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
             this.pasteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteButton.Text = "붙여넣기";
             this.pasteButton.ToolTipText = "붙여넣기";
             this.pasteButton.Click += new System.EventHandler(this.pasteMenuItem_Click);
-            this.penButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.penButton.Image = CreateToolbarIcon("pen");
-            this.penButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.penButton.Text = "펜";
-            this.penButton.ToolTipText = "펜";
-            this.penButton.Click += new System.EventHandler(this.penButton_Click);
-            this.eraserButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.eraserButton.Image = CreateToolbarIcon("eraser");
-            this.eraserButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.eraserButton.Text = "지우개";
-            this.eraserButton.ToolTipText = "지우개";
-            this.eraserButton.Click += new System.EventHandler(this.eraserButton_Click);
-            this.lineButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.lineButton.Image = CreateToolbarIcon("line");
-            this.lineButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lineButton.Text = "선";
-            this.lineButton.ToolTipText = "선";
-            this.lineButton.Click += new System.EventHandler(this.lineButton_Click);
-            this.rectangleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.rectangleButton.Image = CreateToolbarIcon("rectangle");
-            this.rectangleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.rectangleButton.Text = "사각형";
-            this.rectangleButton.ToolTipText = "사각형";
-            this.rectangleButton.Click += new System.EventHandler(this.rectangleButton_Click);
-            this.ellipseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ellipseButton.Image = CreateToolbarIcon("ellipse");
-            this.ellipseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ellipseButton.Text = "타원";
-            this.ellipseButton.ToolTipText = "타원";
-            this.ellipseButton.Click += new System.EventHandler(this.ellipseButton_Click);
+            this.undoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.undoButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.undoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.undoButton.Text = "취소";
+            this.undoButton.ToolTipText = "지우기 취소";
+            this.undoButton.Click += new System.EventHandler(this.undoMenuItem_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabel,
-            this.toolStatusLabel,
-            this.sizeStatusLabel});
+            this.dateStatusLabel,
+            this.timeStatusLabel,
+            this.actionStatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 578);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(920, 22);
             this.statusStrip1.TabIndex = 2;
-            this.statusLabel.Text = "준비";
-            this.toolStatusLabel.Spring = true;
-            this.toolStatusLabel.Text = "도구: 펜";
-            this.sizeStatusLabel.Text = "800 x 500";
+            this.dateStatusLabel.Name = "dateStatusLabel";
+            this.dateStatusLabel.Size = new System.Drawing.Size(67, 17);
+            this.dateStatusLabel.Text = "0000-00-00";
+            this.timeStatusLabel.Name = "timeStatusLabel";
+            this.timeStatusLabel.Size = new System.Drawing.Size(49, 17);
+            this.timeStatusLabel.Text = "00:00:00";
+            this.actionStatusLabel.Name = "actionStatusLabel";
+            this.actionStatusLabel.Spring = true;
+            this.actionStatusLabel.Text = "준비";
+            this.actionStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.clockTimer.Interval = 1000;
+            this.clockTimer.Tick += new System.EventHandler(this.clockTimer_Tick);
             // 
             // dialogs
             // 
@@ -349,44 +343,6 @@ namespace Win_Test
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-        }
-
-        private static System.Drawing.Bitmap CreateToolbarIcon(string shape)
-        {
-            System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(16, 16);
-            using (System.Drawing.Graphics graphics = System.Drawing.Graphics.FromImage(bitmap))
-            using (System.Drawing.Pen pen = new System.Drawing.Pen(System.Drawing.Color.RoyalBlue, 2))
-            using (System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(System.Drawing.Color.LightSkyBlue))
-            {
-                graphics.Clear(System.Drawing.Color.Magenta);
-                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-                if (shape == "pen")
-                {
-                    graphics.DrawLine(pen, 3, 13, 13, 3);
-                    graphics.FillEllipse(System.Drawing.Brushes.Black, 2, 12, 3, 3);
-                }
-                else if (shape == "eraser")
-                {
-                    graphics.FillRectangle(brush, 3, 8, 10, 5);
-                    graphics.DrawRectangle(pen, 3, 8, 10, 5);
-                    graphics.DrawLine(pen, 5, 8, 9, 4);
-                    graphics.DrawLine(pen, 13, 8, 9, 4);
-                }
-                else if (shape == "line")
-                {
-                    graphics.DrawLine(pen, 3, 13, 13, 3);
-                }
-                else if (shape == "rectangle")
-                {
-                    graphics.DrawRectangle(pen, 3, 4, 10, 8);
-                }
-                else
-                {
-                    graphics.DrawEllipse(pen, 3, 4, 10, 8);
-                }
-            }
-            return bitmap;
         }
 
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -422,19 +378,18 @@ namespace Win_Test
         private System.Windows.Forms.ToolStripButton newButton;
         private System.Windows.Forms.ToolStripButton openButton;
         private System.Windows.Forms.ToolStripButton saveButton;
+        private System.Windows.Forms.ToolStripButton saveAsButton;
         private System.Windows.Forms.ToolStripButton printButton;
+        private System.Windows.Forms.ToolStripButton printPreviewButton;
+        private System.Windows.Forms.ToolStripButton cutButton;
         private System.Windows.Forms.ToolStripButton undoButton;
         private System.Windows.Forms.ToolStripButton copyButton;
         private System.Windows.Forms.ToolStripButton pasteButton;
-        private System.Windows.Forms.ToolStripButton penButton;
-        private System.Windows.Forms.ToolStripButton eraserButton;
-        private System.Windows.Forms.ToolStripButton lineButton;
-        private System.Windows.Forms.ToolStripButton rectangleButton;
-        private System.Windows.Forms.ToolStripButton ellipseButton;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
-        private System.Windows.Forms.ToolStripStatusLabel toolStatusLabel;
-        private System.Windows.Forms.ToolStripStatusLabel sizeStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel dateStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel timeStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel actionStatusLabel;
+        private System.Windows.Forms.Timer clockTimer;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.PrintDialog printDialog1;
