@@ -1,0 +1,313 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|c:\\users\\\u3131\u3147\u3148\\documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\win_test (1)\\win_test\\win_test\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\list.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\list.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\list.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\list.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\vaild_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\vaild_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\tab_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\tab_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\searchdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\searchdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\win_test\\searchdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D2D5B6-5D26-4D43-BACC-422DE6CB5246}|Win_Test\\Win_Test.csproj|solutionrelative:win_test\\searchdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form6.cs",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form6.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Form6.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form6.cs*",
+              "RelativeToolTip": "Win_Test\\Form6.cs*",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAqwKUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T01:32:20.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form6.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form6.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Form6.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form6.cs [\uB514\uC790\uC778]*",
+              "RelativeToolTip": "Win_Test\\Form6.cs [\uB514\uC790\uC778]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T01:28:37.126Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Program.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Program.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Program.cs",
+              "RelativeToolTip": "Win_Test\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T01:57:32.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LIst.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\LIst.cs",
+              "RelativeDocumentMoniker": "Win_Test\\LIst.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\LIst.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\LIst.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T00:13:33.707Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LIst.resx",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\LIst.resx",
+              "RelativeDocumentMoniker": "Win_Test\\LIst.resx",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\LIst.resx",
+              "RelativeToolTip": "Win_Test\\LIst.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-05-23T10:58:44.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LIst.cs",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\LIst.cs",
+              "RelativeDocumentMoniker": "Win_Test\\LIst.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\LIst.cs",
+              "RelativeToolTip": "Win_Test\\LIst.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAgwE8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T10:59:13.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\App.config",
+              "RelativeDocumentMoniker": "Win_Test\\App.config",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\App.config",
+              "RelativeToolTip": "Win_Test\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-05-19T00:32:56.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "main.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\main.cs",
+              "RelativeDocumentMoniker": "Win_Test\\main.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\main.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\main.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:32:45.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LIst.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\LIst.Designer.cs",
+              "RelativeDocumentMoniker": "Win_Test\\LIst.Designer.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\LIst.Designer.cs",
+              "RelativeToolTip": "Win_Test\\LIst.Designer.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:32:46.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form5.cs",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form5.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Form5.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form5.cs",
+              "RelativeToolTip": "Win_Test\\Form5.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAwCIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:37:53.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form5.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form5.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Form5.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form5.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\Form5.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:33:26.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Form2.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form2.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Form2.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form2.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\Form2.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:32:54.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Form3.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form3.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Form3.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form3.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\Form3.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:32:53.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Form4.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form4.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Form4.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Form4.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\Form4.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:32:52.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Vaild_Test.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Vaild_Test.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Vaild_Test.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Vaild_Test.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\Vaild_Test.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:32:42.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Tab_Test.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Tab_Test.cs",
+              "RelativeDocumentMoniker": "Win_Test\\Tab_Test.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\Tab_Test.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\Tab_Test.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T00:32:41.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SearchDialog.cs",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\SearchDialog.cs",
+              "RelativeDocumentMoniker": "Win_Test\\SearchDialog.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\SearchDialog.cs",
+              "RelativeToolTip": "Win_Test\\SearchDialog.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswBYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T01:47:44.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SearchDialog.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\SearchDialog.cs",
+              "RelativeDocumentMoniker": "Win_Test\\SearchDialog.cs",
+              "ToolTip": "C:\\Users\\\u3131\u3147\u3148\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\Win_Test (1)\\Win_Test\\Win_Test\\SearchDialog.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Win_Test\\SearchDialog.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T01:30:54.845Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

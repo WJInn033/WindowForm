@@ -1,0 +1,52 @@
+C:\Users\admin\source\repos\Win_Test\Win_Test\bin\Debug\Win_Test.exe.config
+C:\Users\admin\source\repos\Win_Test\Win_Test\bin\Debug\Win_Test.exe
+C:\Users\admin\source\repos\Win_Test\Win_Test\bin\Debug\Win_Test.pdb
+C:\Users\admin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Properties.Resources.resources
+C:\Users\admin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.GenerateResource.cache
+C:\Users\admin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.exe
+C:\Users\admin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.pdb
+C:\Users\admin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Log.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\bin\Debug\Win_Test.exe.config
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\bin\Debug\Win_Test.exe
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\bin\Debug\Win_Test.pdb
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.AssemblyReference.cache
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Log.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Properties.Resources.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.GenerateResource.cache
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.CoreCompileInputs.cache
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.exe
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.pdb
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Form2.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Form3.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.main.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Form4.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Dialog_test.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Vaild_Test.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Tab_Test.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.Key_Form.resources
+C:\Users\O_nin\source\repos\Win_Test\Win_Test\obj\Debug\Win_Test.ImageListtest.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\bin\Debug\Win_Test.exe.config
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\bin\Debug\Win_Test.exe
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\bin\Debug\Win_Test.pdb
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.AssemblyReference.cache
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Dialog_test.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Log.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Form2.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Form3.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Form4.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.ImageListtest.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Key_Form.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.LIst.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.main.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Properties.Resources.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Tab_Test.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Vaild_Test.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.GenerateResource.cache
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.csproj.CoreCompileInputs.cache
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.exe
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.pdb
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.SearchDialog.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Form5.resources
+C:\Users\ㄱㅇㅈ\Documents\카카오톡 받은 파일\Win_Test (1)\Win_Test\Win_Test\obj\Debug\Win_Test.Form6.resources
