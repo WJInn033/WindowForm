@@ -1,263 +1,694 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Win_Test
 {
     public partial class Form6 : Form
     {
+        private int documentNumber = 1;
+
         public Form6()
         {
             InitializeComponent();
         }
 
-        // 새로 만들기
+        private PaintDocument ActiveDocument
+        {
+            get { return ActiveMdiChild as PaintDocument; }
+        }
+
+        private PaintCanvas ActiveCanvas
+        {
+            get { return ActiveDocument == null ? null : ActiveDocument.Canvas; }
+        }
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+            CreateNewDocument();
+        }
+
+        private void Form6_MdiChildActivate(object sender, EventArgs e)
+        {
+            UpdateStatus();
+        }
+
         private void newMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("새로 시작하시겠습니까? 기존 작업이 지워질 수 있습니다.", "새로 만들기",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                textBox1.Clear();
-                this.Text = "제목 없음 - 내 프로그램";
-            }
+            CreateNewDocument();
         }
 
-        // 열기
         private void openMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "텍스트 파일 (*.txt)|*.txt|모든 파일 (*.*)|*.*";
-            openFileDialog1.FileName = "";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog(this) != DialogResult.OK)
             {
-                try
-                {
-                    string content = System.IO.File.ReadAllText(openFileDialog1.FileName, System.Text.Encoding.Default);
-                    textBox1.Text = content;
+                return;
+            }
 
-                    this.Text = openFileDialog1.FileName + " - 내 프로그램";
-                }
-                catch (Exception ex)
+            try
+            {
+                using (Image source = Image.FromFile(openFileDialog1.FileName))
                 {
-                    MessageBox.Show("파일을 열 수 없습니다: " + ex.Message);
+                    PaintDocument doc = CreateNewDocument(Path.GetFileName(openFileDialog1.FileName), false);
+                    doc.FileName = openFileDialog1.FileName;
+                    doc.Canvas.LoadImage(source);
+                    doc.Text = Path.GetFileName(openFileDialog1.FileName);
                 }
+                statusLabel.Text = "이미지를 열었습니다.";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "파일을 열 수 없습니다.\r\n" + ex.Message, "열기 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // 닫기
         private void closeMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("프로그램을 종료하시겠습니까?", "종료확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (ActiveDocument != null)
             {
-                this.Close();
+                ActiveDocument.Close();
             }
         }
 
-        // 모두 닫기
         private void closeAllMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("열려 있는 모든 작업을 마치고 종료 하시겠습니까?", "모두 닫기",
-                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            foreach (Form child in MdiChildren)
             {
-                Application.Exit();
+                child.Close();
             }
         }
 
-        // 저장
         private void saveMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Filter = "텍스트 파일 (*.txt)|*.txt|모든 파일 (*.*)|*.*";
-            saveFileDialog1.DefaultExt = "txt";
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    System.IO.File.WriteAllText(saveFileDialog1.FileName, textBox1.Text, System.Text.Encoding.Default);
-                    MessageBox.Show("성공적으로 저장되었습니다.");
-                    this.Text = saveFileDialog1.FileName;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("저장 중 오류가 발생했습니다: " + ex.Message);
-                }
-            }
+            SaveDocument(false);
         }
 
-        // 다른 이름으로 저장
         private void saveAsMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Title = "다른 이름으로 저장";
-            saveFileDialog1.Filter = "텍스트 파일 (*.txt)|*.txt|모든 파일 (*.*)|*.*";
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    System.IO.File.WriteAllText(saveFileDialog1.FileName, textBox1.Text, System.Text.Encoding.Default);
-                    this.Text = saveFileDialog1.FileName;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("저장 실패: " + ex.Message);
-                }
-            }
+            SaveDocument(true);
         }
 
-        // 페이지 설정
         private void pageSetupMenuItem_Click(object sender, EventArgs e)
         {
             pageSetupDialog1.Document = printDocument1;
-            pageSetupDialog1.ShowDialog();
+            pageSetupDialog1.ShowDialog(this);
         }
 
-        // 출력
-        private void 출력PToolStripMenuItem_Click(object sender, EventArgs e)
+        private void printMenuItem_Click(object sender, EventArgs e)
         {
+            if (ActiveCanvas == null)
+            {
+                return;
+            }
+
             printDialog1.Document = printDocument1;
-            if (printDialog1.ShowDialog() == DialogResult.OK)
+            if (printDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 printDocument1.Print();
             }
         }
 
-        // 미리보기
         private void printPreviewMenuItem_Click(object sender, EventArgs e)
         {
+            if (ActiveCanvas == null)
+            {
+                return;
+            }
+
             printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.ShowDialog();
+            printPreviewDialog1.ShowDialog(this);
         }
 
-        // 인쇄 페이지 그리기
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawString(textBox1.Text, textBox1.Font, Brushes.Black, e.MarginBounds.Left, e.MarginBounds.Top);
+            if (ActiveCanvas == null)
+            {
+                return;
+            }
+
+            Bitmap image = ActiveCanvas.CreateSnapshot();
+            Rectangle target = FitRectangle(image.Size, e.MarginBounds);
+            e.Graphics.DrawImage(image, target);
+            image.Dispose();
         }
 
-        // 끝내기
         private void exitMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("프로그램을 종료하시겠습니까?", "종료 확인",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            Close();
         }
 
-        // 지우기 취소
         private void undoMenuItem_Click(object sender, EventArgs e)
         {
-            if (textBox1.CanUndo == true)
+            if (ActiveCanvas != null)
             {
-                textBox1.Undo();
+                ActiveCanvas.Undo();
             }
         }
 
-        // 잘라내기
         private void cutMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.Cut();
+            if (ActiveCanvas == null)
+            {
+                return;
+            }
+
+            copyMenuItem_Click(sender, e);
+            ActiveCanvas.ClearCanvas();
         }
 
-        // 복사
         private void copyMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.Copy();
-        }
-
-        // 붙여넣기
-        private void pasteMenuItem_Click(object sender, EventArgs e)
-        {
-            textBox1.Paste();
-        }
-
-        // 글꼴
-        private void fontMenuItem_Click(object sender, EventArgs e)
-        {
-            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            if (ActiveCanvas != null)
             {
-                textBox1.Font = fontDialog1.Font;
+                Clipboard.SetImage(ActiveCanvas.CreateSnapshot());
+                statusLabel.Text = "그림을 복사했습니다.";
             }
         }
 
-        // 배경색
+        private void pasteMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveCanvas != null && Clipboard.ContainsImage())
+            {
+                ActiveCanvas.PasteImage(Clipboard.GetImage());
+                statusLabel.Text = "그림을 붙여넣었습니다.";
+            }
+        }
+
+        private void penColorMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveCanvas == null)
+            {
+                return;
+            }
+
+            colorDialog1.Color = ActiveCanvas.PenColor;
+            if (colorDialog1.ShowDialog(this) == DialogResult.OK)
+            {
+                ActiveCanvas.PenColor = colorDialog1.Color;
+                statusLabel.Text = "펜 색을 변경했습니다.";
+            }
+        }
+
         private void backColorMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.BackColor = colorDialog1.Color;
+            if (ActiveCanvas == null)
+            {
+                return;
+            }
+
+            colorDialog1.Color = ActiveCanvas.CanvasColor;
+            if (colorDialog1.ShowDialog(this) == DialogResult.OK)
+            {
+                ActiveCanvas.SetCanvasColor(colorDialog1.Color);
+                statusLabel.Text = "배경색을 변경했습니다.";
+            }
         }
 
-        // 계단식 정렬
+        private void penWidthMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveCanvas == null)
+            {
+                return;
+            }
+
+            ActiveCanvas.PenWidth = ActiveCanvas.PenWidth >= 12 ? 2 : ActiveCanvas.PenWidth + 2;
+            statusLabel.Text = "선 굵기: " + ActiveCanvas.PenWidth;
+        }
+
+        private void clearMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveCanvas != null)
+            {
+                ActiveCanvas.ClearCanvas();
+            }
+        }
+
         private void cascadeMenuItem_Click(object sender, EventArgs e)
         {
+            LayoutMdi(MdiLayout.Cascade);
         }
 
-        // 바둑판식 정렬
-        private void 바둑판식정렬ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tileHorizontalMenuItem_Click(object sender, EventArgs e)
         {
+            LayoutMdi(MdiLayout.TileHorizontal);
         }
 
-        // 아이콘식 정렬
-        private void 아이콘식정렬ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tileVerticalMenuItem_Click(object sender, EventArgs e)
         {
+            LayoutMdi(MdiLayout.TileVertical);
         }
 
-        // 툴바: 새로 만들기
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void arrangeIconsMenuItem_Click(object sender, EventArgs e)
         {
+            LayoutMdi(MdiLayout.ArrangeIcons);
         }
 
-        // 툴바: 열기
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void aboutMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(this, "클래식 그림판 메뉴 예제입니다.", "도움말", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        // 툴바: 저장
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void penButton_Click(object sender, EventArgs e)
         {
+            SetTool(DrawingTool.Pen);
         }
 
-        // 툴바: 출력
-        private void toolStripButton4_Click(object sender, EventArgs e)
+        private void eraserButton_Click(object sender, EventArgs e)
         {
+            SetTool(DrawingTool.Eraser);
         }
 
-        // 툴바: 잘라내기
-        private void toolStripButton5_Click(object sender, EventArgs e)
+        private void lineButton_Click(object sender, EventArgs e)
         {
+            SetTool(DrawingTool.Line);
         }
 
-        // 툴바: 복사
-        private void toolStripButton6_Click(object sender, EventArgs e)
+        private void rectangleButton_Click(object sender, EventArgs e)
         {
+            SetTool(DrawingTool.Rectangle);
         }
 
-        // 툴바: 붙여넣기
-        private void toolStripButton7_Click(object sender, EventArgs e)
+        private void ellipseButton_Click(object sender, EventArgs e)
         {
+            SetTool(DrawingTool.Ellipse);
         }
 
-        // 툴바: 지우기 취소
-        private void toolStripButton8_Click(object sender, EventArgs e)
+        private PaintDocument CreateNewDocument(string title = null, bool activate = true)
         {
+            PaintDocument doc = new PaintDocument();
+            doc.MdiParent = this;
+            doc.Text = title ?? "문서" + documentNumber++;
+            doc.Canvas.CanvasChanged += delegate { UpdateStatus(); };
+            doc.Show();
+            if (activate)
+            {
+                doc.Activate();
+            }
+            return doc;
         }
 
-        // 툴바: 글꼴
-        private void toolStripButton9_Click(object sender, EventArgs e)
+        private void SaveDocument(bool saveAs)
         {
+            PaintDocument doc = ActiveDocument;
+            if (doc == null)
+            {
+                return;
+            }
+
+            if (saveAs || string.IsNullOrEmpty(doc.FileName))
+            {
+                saveFileDialog1.FileName = doc.FileName ?? doc.Text + ".png";
+                if (saveFileDialog1.ShowDialog(this) != DialogResult.OK)
+                {
+                    return;
+                }
+                doc.FileName = saveFileDialog1.FileName;
+            }
+
+            try
+            {
+                ImageFormat format = GetImageFormat(doc.FileName);
+                using (Bitmap image = doc.Canvas.CreateSnapshot())
+                {
+                    image.Save(doc.FileName, format);
+                }
+                doc.Text = Path.GetFileName(doc.FileName);
+                statusLabel.Text = "저장했습니다.";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "저장할 수 없습니다.\r\n" + ex.Message, "저장 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        // 툴바: 배경색
-        private void toolStripButton10_Click(object sender, EventArgs e)
+        private void SetTool(DrawingTool tool)
         {
+            if (ActiveCanvas == null)
+            {
+                return;
+            }
+
+            ActiveCanvas.Tool = tool;
+            UpdateStatus();
+        }
+
+        private void UpdateStatus()
+        {
+            PaintCanvas canvas = ActiveCanvas;
+            if (canvas == null)
+            {
+                statusLabel.Text = "문서 없음";
+                toolStatusLabel.Text = string.Empty;
+                sizeStatusLabel.Text = string.Empty;
+                return;
+            }
+
+            statusLabel.Text = ActiveDocument.Text;
+            toolStatusLabel.Text = "도구: " + canvas.ToolText + " / 선 굵기: " + canvas.PenWidth;
+            sizeStatusLabel.Text = canvas.ImageSize.Width + " x " + canvas.ImageSize.Height;
+        }
+
+        private static ImageFormat GetImageFormat(string fileName)
+        {
+            string extension = Path.GetExtension(fileName).ToLowerInvariant();
+            if (extension == ".jpg" || extension == ".jpeg")
+            {
+                return ImageFormat.Jpeg;
+            }
+            if (extension == ".bmp")
+            {
+                return ImageFormat.Bmp;
+            }
+            return ImageFormat.Png;
+        }
+
+        private static Rectangle FitRectangle(Size imageSize, Rectangle bounds)
+        {
+            float scale = Math.Min((float)bounds.Width / imageSize.Width, (float)bounds.Height / imageSize.Height);
+            int width = (int)(imageSize.Width * scale);
+            int height = (int)(imageSize.Height * scale);
+            int x = bounds.Left + (bounds.Width - width) / 2;
+            int y = bounds.Top + (bounds.Height - height) / 2;
+            return new Rectangle(x, y, width, height);
+        }
+    }
+
+    internal enum DrawingTool
+    {
+        Pen,
+        Eraser,
+        Line,
+        Rectangle,
+        Ellipse
+    }
+
+    internal sealed class PaintDocument : Form
+    {
+        public PaintDocument()
+        {
+            Canvas = new PaintCanvas();
+            Canvas.Dock = DockStyle.Fill;
+            AutoScroll = true;
+            ClientSize = new Size(800, 500);
+            Controls.Add(Canvas);
+        }
+
+        public string FileName { get; set; }
+
+        public PaintCanvas Canvas { get; private set; }
+    }
+
+    internal sealed class PaintCanvas : Control
+    {
+        private readonly Stack<Bitmap> undoStack = new Stack<Bitmap>();
+        private Bitmap image;
+        private Point startPoint;
+        private Point lastPoint;
+        private bool drawing;
+
+        public PaintCanvas()
+        {
+            DoubleBuffered = true;
+            BackColor = Color.White;
+            PenColor = Color.Black;
+            CanvasColor = Color.White;
+            PenWidth = 2;
+            Tool = DrawingTool.Pen;
+            image = CreateBlankBitmap(new Size(800, 500), CanvasColor);
+            Size = image.Size;
+            Cursor = Cursors.Cross;
+        }
+
+        public event EventHandler CanvasChanged;
+
+        public Color PenColor { get; set; }
+
+        public Color CanvasColor { get; private set; }
+
+        public int PenWidth { get; set; }
+
+        public DrawingTool Tool { get; set; }
+
+        public Size ImageSize
+        {
+            get { return image.Size; }
+        }
+
+        public string ToolText
+        {
+            get
+            {
+                switch (Tool)
+                {
+                    case DrawingTool.Eraser:
+                        return "지우개";
+                    case DrawingTool.Line:
+                        return "선";
+                    case DrawingTool.Rectangle:
+                        return "사각형";
+                    case DrawingTool.Ellipse:
+                        return "타원";
+                    default:
+                        return "펜";
+                }
+            }
+        }
+
+        public void LoadImage(Image source)
+        {
+            PushUndo();
+            Bitmap next = new Bitmap(source.Width, source.Height);
+            using (Graphics graphics = Graphics.FromImage(next))
+            {
+                graphics.Clear(Color.White);
+                graphics.DrawImage(source, 0, 0, source.Width, source.Height);
+            }
+            ReplaceImage(next);
+        }
+
+        public Bitmap CreateSnapshot()
+        {
+            return new Bitmap(image);
+        }
+
+        public void PasteImage(Image source)
+        {
+            if (source == null)
+            {
+                return;
+            }
+
+            PushUndo();
+            using (Graphics graphics = Graphics.FromImage(image))
+            {
+                graphics.DrawImage(source, 10, 10, source.Width, source.Height);
+            }
+            Invalidate();
+            OnCanvasChanged();
+        }
+
+        public void SetCanvasColor(Color color)
+        {
+            PushUndo();
+            CanvasColor = color;
+            using (Graphics graphics = Graphics.FromImage(image))
+            {
+                using (SolidBrush brush = new SolidBrush(color))
+                {
+                    graphics.FillRectangle(brush, ClientRectangle);
+                }
+            }
+            Invalidate();
+            OnCanvasChanged();
+        }
+
+        public void ClearCanvas()
+        {
+            PushUndo();
+            using (Graphics graphics = Graphics.FromImage(image))
+            {
+                graphics.Clear(CanvasColor);
+            }
+            Invalidate();
+            OnCanvasChanged();
+        }
+
+        public void Undo()
+        {
+            if (undoStack.Count == 0)
+            {
+                return;
+            }
+
+            ReplaceImage(undoStack.Pop());
+        }
+
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            if (e.Button != MouseButtons.Left)
+            {
+                return;
+            }
+
+            PushUndo();
+            drawing = true;
+            startPoint = e.Location;
+            lastPoint = e.Location;
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+            if (!drawing)
+            {
+                return;
+            }
+
+            if (Tool == DrawingTool.Pen || Tool == DrawingTool.Eraser)
+            {
+                using (Graphics graphics = Graphics.FromImage(image))
+                using (Pen pen = CreatePen())
+                {
+                    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    graphics.DrawLine(pen, lastPoint, e.Location);
+                }
+                lastPoint = e.Location;
+                Invalidate();
+            }
+            else
+            {
+                Invalidate();
+            }
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+            if (!drawing)
+            {
+                return;
+            }
+
+            drawing = false;
+            if (Tool == DrawingTool.Line || Tool == DrawingTool.Rectangle || Tool == DrawingTool.Ellipse)
+            {
+                using (Graphics graphics = Graphics.FromImage(image))
+                using (Pen pen = CreatePen())
+                {
+                    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    DrawShape(graphics, pen, startPoint, e.Location);
+                }
+            }
+            Invalidate();
+            OnCanvasChanged();
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.DrawImageUnscaled(image, Point.Empty);
+
+            if (drawing && Tool != DrawingTool.Pen && Tool != DrawingTool.Eraser)
+            {
+                using (Pen pen = CreatePen())
+                {
+                    pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+                    DrawShape(e.Graphics, pen, startPoint, PointToClient(MousePosition));
+                }
+            }
+        }
+
+        private Pen CreatePen()
+        {
+            Color color = Tool == DrawingTool.Eraser ? CanvasColor : PenColor;
+            Pen pen = new Pen(color, PenWidth);
+            pen.StartCap = System.Drawing.Drawing2D.LineCap.Round;
+            pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+            return pen;
+        }
+
+        private void DrawShape(Graphics graphics, Pen pen, Point start, Point end)
+        {
+            Rectangle rectangle = GetRectangle(start, end);
+            if (Tool == DrawingTool.Line)
+            {
+                graphics.DrawLine(pen, start, end);
+            }
+            else if (Tool == DrawingTool.Rectangle)
+            {
+                graphics.DrawRectangle(pen, rectangle);
+            }
+            else if (Tool == DrawingTool.Ellipse)
+            {
+                graphics.DrawEllipse(pen, rectangle);
+            }
+        }
+
+        private static Rectangle GetRectangle(Point first, Point second)
+        {
+            return new Rectangle(
+                Math.Min(first.X, second.X),
+                Math.Min(first.Y, second.Y),
+                Math.Abs(first.X - second.X),
+                Math.Abs(first.Y - second.Y));
+        }
+
+        private void PushUndo()
+        {
+            undoStack.Push(new Bitmap(image));
+            while (undoStack.Count > 20)
+            {
+                Bitmap old = undoStack.ToArray()[undoStack.Count - 1];
+                old.Dispose();
+                break;
+            }
+        }
+
+        private void ReplaceImage(Bitmap next)
+        {
+            if (image != null)
+            {
+                image.Dispose();
+            }
+            image = next;
+            Size = image.Size;
+            Invalidate();
+            OnCanvasChanged();
+        }
+
+        private void OnCanvasChanged()
+        {
+            if (CanvasChanged != null)
+            {
+                CanvasChanged(this, EventArgs.Empty);
+            }
+        }
+
+        private static Bitmap CreateBlankBitmap(Size size, Color color)
+        {
+            Bitmap bitmap = new Bitmap(size.Width, size.Height);
+            using (Graphics graphics = Graphics.FromImage(bitmap))
+            {
+                graphics.Clear(color);
+            }
+            return bitmap;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && image != null)
+            {
+                image.Dispose();
+                while (undoStack.Count > 0)
+                {
+                    undoStack.Pop().Dispose();
+                }
+            }
+            base.Dispose(disposing);
         }
     }
 }

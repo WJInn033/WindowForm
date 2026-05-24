@@ -52,7 +52,8 @@ namespace Win_Test
         private void txt_home_Validating(object sender, CancelEventArgs e)
         {
             //반환값이 두개가 생긴다.
-            bool result = Int32.TryParse(txt_home.Text, out int value);
+            int value;
+            bool result = Int32.TryParse(txt_home.Text, out value);
             if (txt_home.Text.Length == 0)
             {
                 lbl_message.Text = "집전화 번호를 입력하세요.";
@@ -67,7 +68,8 @@ namespace Win_Test
 
         private void txt_cell_Validating(object sender, CancelEventArgs e)
         {
-            bool result = Int32.TryParse(txt_cell.Text, out int value);
+            int value;
+            bool result = Int32.TryParse(txt_cell.Text, out value);
             if (txt_cell.Text.Length == 0)
             {
                 lbl_message.Text = "휴대폰 번호를 입력하세요.";
